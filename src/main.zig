@@ -61,6 +61,10 @@ pub fn main(init: std.process.Init) !void {
         _ = c.read(fd, &ie, @sizeOf(input.input_event));
         if (ie.type != input.EV_KEY) continue;
         if (ie.value != 1) continue;
-        print("Key pressed: {s}\n", .{code_to_value_mappings[ie.code] orelse @panic("what happened?")});
+        const mapping = code_to_value_mappings[ie.code] orelse @panic("what happened?");
+        if (std.mem.eql(u8, mapping, "SPACE")) print(" ", .{})
+        else if (std.mem.eql(u8, mapping, "ENTER")) print("\n", .{})
+        else print("{s}", .{mapping});
     }
 }
+
