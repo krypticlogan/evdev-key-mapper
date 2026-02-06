@@ -1,4 +1,4 @@
-This tiny thing is a key mapper and prints whichever key is pressed on Linux machines, but the program must be ran with root priveleges and the direct path to the event file must be provided as an argument.
+This tiny thing is a key mapper and prints whichever key is pressed on Linux machines, but the program must be ran with root privileges and the direct path to the event file must be provided as an argument.
 
 Yes, super applicable and useful to all.
 
